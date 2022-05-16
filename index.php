@@ -42,6 +42,16 @@
             <div class="osobine-proizvoda">
                 <label>Brend: </label>
                 <select class="form-select" id="brend">
+                    <?php
+                    include('konekcija.php');
+
+                    $sql1 = "select * from brend";
+                    $result_set1 = $konekcija->query($sql1);
+
+                    while ($brend = mysqli_fetch_array($result_set1)) {
+                    ?>
+                        <option value="<?php echo $brend['id']; ?>"><?php echo $brend['naziv']; ?></option>
+                    <?php } ?>
                 </select>
             </div>
         </div>
@@ -67,7 +77,6 @@
 
             <tbody>
                 <?php
-                include('konekcija.php');
 
                 $sql = "select pzd.id as pid, pzd.naziv, pzd.sifra, pzd.velicina, pzd.boja, pzd.cena, b.naziv as bnaziv from proizvod pzd join brend b on pzd.brend_id=b.id";
                 $result_set = $konekcija->query($sql);
@@ -92,7 +101,8 @@
     </div>
 
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js.js"></script>
 </body>
 
 </html>
