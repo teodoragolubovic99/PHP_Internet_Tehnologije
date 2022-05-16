@@ -50,6 +50,47 @@
     </div>
 
 
+    <div class="proizvodi-tbl-div">
+        <table class="table table-bordered" id="proizvodi-tbl">
+
+            <thead>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Šifra</th>
+                    <th>Veličina</th>
+                    <th>Boja</th>
+                    <th>Cena</th>
+                    <th>Brend</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
+                include('konekcija.php');
+
+                $sql = "select pzd.id as pid, pzd.naziv, pzd.sifra, pzd.velicina, pzd.boja, pzd.cena, b.naziv as bnaziv from proizvod pzd join brend b on pzd.brend_id=b.id";
+                $result_set = $konekcija->query($sql);
+                while ($proizvod = mysqli_fetch_array($result_set)) {
+                ?>
+                    <tr>
+                        <td><?php echo $proizvod['naziv'];  ?></td>
+                        <td><?php echo $proizvod['sifra'];  ?></td>
+                        <td><?php echo $proizvod['velicina'];  ?></td>
+                        <td><?php echo $proizvod['boja']; ?></td>
+                        <td><?php echo $proizvod['cena']; ?></td>
+                        <td><?php echo $proizvod['bnaziv']; ?></td>
+                        <td style="width: 180px;">
+                            <button id="btn_izmena" class="btn btn-success">Izmeni</button>
+                            <button id="btn_brisanje" class="btn btn-danger">Obriši</button>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+
+        </table>
+    </div>
+
 
 
 </body>

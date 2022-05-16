@@ -24,3 +24,13 @@
     width: 12%;
     margin-left: 45%; 
 }
+
+#proizvodi-tbl{
+    width: 70%;
+    margin-left: 16.5%;
+    margin-top: 3%;
+}
+
+#btn_izmena, #btn_brisanje {
+    border-radius: 40%;
+}
