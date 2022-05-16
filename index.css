@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+}
+
+#slika {
+    margin-top: 50px;
+    margin-left: 39%;
+    width: 400px;
+}
+
+.form-control, .form-select {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.unos-proizvoda-div{
+    margin-top: 2%;
+    padding-left: 18%;
+    display: flex;
+}
+
+#btn_sacuvaj{
+    margin-top: 1%;
+    width: 12%;
+    margin-left: 45%; 
+}
