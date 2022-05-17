@@ -19,6 +19,9 @@
     <div class="main-div">
 
         <div class="unos-proizvoda-div">
+
+            <hidden id="idProizvoda"></hidden>
+
             <div class="osobine-proizvoda">
                 <label>Naziv: </label>
                 <input type="text" class="form-control" id="naziv">
@@ -89,9 +92,9 @@
                         <td><?php echo $proizvod['boja']; ?></td>
                         <td><?php echo $proizvod['cena']; ?></td>
                         <td><?php echo $proizvod['bnaziv']; ?></td>
-                        <td style="width: 180px;">
-                            <button id="btn_izmena" class="btn btn-success">Izmeni</button>
-                            <button id="btn_brisanje" class="btn btn-danger">Obriši</button>
+                        <td style="width: 200px;">
+                            <button id="btn_izmena" value="<?php echo $proizvod['pid'] ?>" class="btn btn-success">Izmeni</button>
+                            <button id="btn_brisanje" class="btn btn-danger">Kupljeno</button>
                         </td>
                     </tr>
                 <?php } ?>
