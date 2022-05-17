@@ -98,7 +98,7 @@
                         <td><?php echo $proizvod['bnaziv']; ?></td>
                         <td style="width: 200px;">
                             <button id="btn_izmena" value="<?php echo $proizvod['pid'] ?>" class="btn btn-success">Izmeni</button>
-                            <button id="btn_brisanje" class="btn btn-danger">Kupljeno</button>
+                            <button id="btn_brisanje" value="<?php echo $proizvod['pid'] ?>" class="btn btn-danger">Kupljeno</button>
                         </td>
                     </tr>
                 <?php } ?>

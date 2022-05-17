@@ -2,6 +2,7 @@ $(function () {
     sacuvajProizvod();
     vratiPodatkeZaProizvod();
     izmeniProizvod();
+    obrisiProizvod();
 });
 
 
@@ -71,5 +72,20 @@ function izmeniProizvod() {
             data: { PID: id, PNaziv: naziv, PSifra: sifra, PVelicina: velicina, PBoja: boja, PCena: cena, PBrend: brend },
         })
 
+    })
+}
+
+
+function obrisiProizvod() {
+
+    $(document).on('click', '#btn_brisanje', function () {
+
+        var id = $(this).attr('value');
+
+        $.ajax({
+            url: 'obrisiProizvod.php',
+            method: 'post',
+            data: { PID: id },
+        })
     })
 }
