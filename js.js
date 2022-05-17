@@ -1,11 +1,9 @@
 $(function () {
     sacuvajProizvod();
     vratiPodatkeZaProizvod();
+    izmeniProizvod();
 });
 
-$.ajaxStop(function () {
-    window.location.reload();
-});
 
 function sacuvajProizvod() {
 
@@ -51,5 +49,27 @@ function vratiPodatkeZaProizvod() {
                 $('#brend').val(data.brend_id);
             }
         })
+    })
+}
+
+
+function izmeniProizvod() {
+
+    $(document).on('click', '#btn_sacuvaj_izmene', function () {
+
+        var id = $('#idProizvoda').val();
+        var naziv = $('#naziv').val();
+        var sifra = $('#sifra').val();
+        var velicina = $('#velicina').val();
+        var boja = $('#boja').val();
+        var cena = $('#cena').val();
+        var brend = $('#brend').val();
+
+        $.ajax({
+            url: 'izmeniProizvod.php',
+            method: 'post',
+            data: { PID: id, PNaziv: naziv, PSifra: sifra, PVelicina: velicina, PBoja: boja, PCena: cena, PBrend: brend },
+        })
+
     })
 }

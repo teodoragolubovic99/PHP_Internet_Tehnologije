@@ -59,7 +59,11 @@
             </div>
         </div>
 
-        <button class="btn btn-primary" id="btn_sacuvaj">Sačuvaj proizvod</button>
+        <div class="dugmici">
+            <button class="btn btn-primary" id="btn_sacuvaj">Dodaj u spisak</button>
+            <button class="btn btn-primary" id="btn_sacuvaj_izmene">Sačuvaj izmene</button>
+        </div>
+
     </div>
 
 

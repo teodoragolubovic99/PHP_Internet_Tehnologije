@@ -19,11 +19,7 @@
     display: flex;
 }
 
-#btn_sacuvaj{
-    margin-top: 1%;
-    width: 12%;
-    margin-left: 45%; 
-}
+
 
 #proizvodi-tbl{
     width: 70%;
@@ -33,4 +29,14 @@
 
 #btn_izmena, #btn_brisanje {
     border-radius: 20%;
+}
+
+.dugmici {
+    display: flex;
+    padding-left: 43%;
+    padding-top: 1%;
+}
+
+#btn_sacuvaj{
+    margin-right: 3%;
 }

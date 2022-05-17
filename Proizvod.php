@@ -15,4 +15,11 @@ class Proizvod
         $sql = "insert into proizvod values (NULL, '$naziv', '$sifra', '$velicina', '$boja', '$cena', '$brend_id')";
         $konekcija->query($sql);
     }
+
+
+    public function izmeniProizvod($id, $naziv, $sifra, $velicina, $boja, $cena, $brend_id, $konekcija)
+    {
+        $sql = "update proizvod set naziv='" . $naziv . "', sifra='" . $sifra . "', velicina='" . $velicina . "', boja='" . $boja . "', cena='" . $cena . "', brend_id='" . $brend_id . "' where id=" . $id;
+        $konekcija->query($sql);
+    }
 }
