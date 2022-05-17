@@ -3,6 +3,7 @@ $(function () {
     vratiPodatkeZaProizvod();
     izmeniProizvod();
     obrisiProizvod();
+    sort();
 });
 
 
@@ -87,5 +88,39 @@ function obrisiProizvod() {
             method: 'post',
             data: { PID: id },
         })
+    })
+}
+
+
+function sort() {
+
+    $(document).on('click', 'th', function () {
+
+        var kol = $(this).attr('id');
+        var sort = $(this).attr('sort');
+
+        if (kol != 'cena' && kol != 'velicina') {
+            alert('Sortiranje je moguće samo po ceni ili veličini proizvoda!')
+            return
+        }
+
+        $.ajax({
+            url: 'sortiranjeProizvoda.php',
+            method: 'post',
+            data: { PKol: kol, PSort: sort },
+
+            success: function (data) {
+                $('#body-tbl').html(data);
+            }
+        })
+
+        if (sort == 'asc') {
+            $(this).attr('sort', 'desc');
+        }
+        if (sort == 'desc') {
+            $(this).attr('sort', 'asc');
+        }
+
+
     })
 }

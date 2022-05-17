@@ -74,15 +74,15 @@
                 <tr>
                     <th>Naziv</th>
                     <th>Šifra</th>
-                    <th>Veličina</th>
+                    <th id="velicina" sort="desc">Veličina</th>
                     <th>Boja</th>
-                    <th>Cena</th>
+                    <th id="cena" sort="desc">Cena</th>
                     <th>Brend</th>
                     <th></th>
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody id="body-tbl">
                 <?php
 
                 $sql = "select pzd.id as pid, pzd.naziv, pzd.sifra, pzd.velicina, pzd.boja, pzd.cena, b.naziv as bnaziv from proizvod pzd join brend b on pzd.brend_id=b.id";
