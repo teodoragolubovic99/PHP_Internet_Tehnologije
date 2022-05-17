@@ -4,6 +4,7 @@ $(function () {
     izmeniProizvod();
     obrisiProizvod();
     sort();
+    pretraga();
 });
 
 
@@ -122,5 +123,28 @@ function sort() {
         }
 
 
+    })
+}
+
+
+function pretraga() {
+
+    $(document).on('click', '#btn_pretraga', function () {
+
+        var vrednost = $('#pretraga-input').val();
+        alert(vrednost)
+
+        $.ajax(
+            {
+                url: 'pretragaProizvoda.php',
+                method: 'post',
+                data: { PVrednost: vrednost },
+                success: function (data) {
+                    {
+                        $('#body-tbl').html(data);
+                    }
+                }
+            }
+        )
     })
 }

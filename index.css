@@ -40,3 +40,14 @@
 #btn_sacuvaj{
     margin-right: 3%;
 }
+
+.pretraga-div{
+    padding-top: 50px;
+    padding-left: 320px;
+    margin-bottom: -50px;
+}
+
+#btn_pretraga{
+    margin-top: 5px;
+    width: 200px;
+}

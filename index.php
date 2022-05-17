@@ -67,6 +67,13 @@
     </div>
 
 
+    <div class="pretraga-div">
+        <h3>Pretraga proizvoda</h3>
+        <input type="text" class="form-control" id="pretraga-input">
+        <button class="btn btn-primary" id="btn_pretraga">Pretraži</button>
+    </div>
+
+
     <div class="proizvodi-tbl-div">
         <table class="table table-bordered" id="proizvodi-tbl">
 
